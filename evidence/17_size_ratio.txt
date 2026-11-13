@@ -1,0 +1,2 @@
+$ python3 -c "import subprocess as s; z=lambda t: int(s.check_output(['docker','image','inspect','-f','{{.Size}}','loan-api:'+t])); f,p=z('full'),z('prod'); print(f'full = {f/1e6:.0f} MB, prod = {p/1e6:.0f} MB, prod is {100*(1-p/f):.0f}% smaller than full')"
+full = 2185 MB, prod = 778 MB, prod is 64% smaller than full

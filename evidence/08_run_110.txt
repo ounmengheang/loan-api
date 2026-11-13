@@ -1,0 +1,2 @@
+$ docker run -d --name prod110 -p 8001:8000 -v "$(pwd)/models:/models:ro" -e MODEL_PATH=/models/model.joblib loan-api:prod
+32d8cc02ddd16bac075818d78c4b5acb92d7dad0450a16ec25a883704864ad22

@@ -1,0 +1,4 @@
+$ docker build -t loan-api:slim -f Dockerfile . 2>&1 | tail -n 3
+#12 naming to docker.io/library/loan-api:slim done
+#12 unpacking to docker.io/library/loan-api:slim 0.0s done
+#12 DONE 0.2s

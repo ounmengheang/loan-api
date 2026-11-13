@@ -1,0 +1,5 @@
+$ grep -nE '^(FROM|USER|HEALTHCHECK)' Dockerfile.prod
+2:FROM python:3.12-slim AS builder
+12:FROM python:3.12-slim
+21:USER appuser
+23:HEALTHCHECK --interval=30s --timeout=3s --retries=3 \

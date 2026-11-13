@@ -1,0 +1,11 @@
+$ cat .dockerignore
+.git
+.venv
+__pycache__/
+*.pyc
+.pytest_cache/
+.devcontainer/
+model.joblib
+models/
+.env
+evidence/

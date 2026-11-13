@@ -1,0 +1,2 @@
+$ docker run -d --name prod -p 8000:8000 loan-api:prod
+89a50c70b2148794aeb7b9c36897457e440c6fb708df712cfd1cc8e7ee83f19f

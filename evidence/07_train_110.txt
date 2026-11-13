@@ -1,0 +1,2 @@
+$ python train.py --version 1.1.0 --out models/model.joblib
+Saved model 1.1.0 to models/model.joblib (test AUC 0.923)

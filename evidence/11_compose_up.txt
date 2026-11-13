@@ -1,0 +1,9 @@
+$ docker compose up -d --build 2>&1 | tail -n 8
+ Container loan-api-db-1 Starting 
+ Container loan-api-db-1 Started 
+ Container loan-api-adminer-1 Starting 
+ Container loan-api-db-1 Waiting 
+ Container loan-api-adminer-1 Started 
+ Container loan-api-db-1 Healthy 
+ Container loan-api-api-1 Starting 
+ Container loan-api-api-1 Started 

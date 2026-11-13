@@ -1,0 +1,13 @@
+$ docker build -t loan-api:prod -f Dockerfile.prod . 2>&1 | tail -n 12
+
+#19 exporting to image
+#19 exporting layers
+#19 exporting layers 10.3s done
+#19 exporting manifest sha256:f0e45005bce1fc8ad8c92fd22f7fa86ad6b93f79c337b7dad5ad3fa9ce5ad1ff 0.0s done
+#19 exporting config sha256:ec484dddc7b5c468ecb67f25ff31ae5e2a4d15f452639b706f326425f6066440 0.0s done
+#19 exporting attestation manifest sha256:f5b70cfddf2ed31753cce60e5f90b39030b66ec98a0e1415cf352661d1da0321 0.0s done
+#19 exporting manifest list sha256:6ab98a66ff5eb968dd56306d75ec5a781465af50763ffa0b1816cadf7b6f905c 0.0s done
+#19 naming to docker.io/library/loan-api:prod 0.0s done
+#19 unpacking to docker.io/library/loan-api:prod
+#19 unpacking to docker.io/library/loan-api:prod 8.0s done
+#19 DONE 18.4s

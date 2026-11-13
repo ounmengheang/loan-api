@@ -1,0 +1,3 @@
+$ docker ps --filter name=prod --format 'table {{.Names}}\t{{.Image}}\t{{.Status}}'
+NAMES     IMAGE           STATUS
+prod      loan-api:prod   Up 40 seconds (healthy)

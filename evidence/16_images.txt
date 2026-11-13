@@ -1,0 +1,5 @@
+$ docker images loan-api
+IMAGE           ID             DISK USAGE   CONTENT SIZE   EXTRA
+loan-api:full   08904cfab642       2.19GB          542MB        
+loan-api:prod   6ab98a66ff5e        778MB          178MB        
+loan-api:slim   35c19e85bb73        760MB          174MB        

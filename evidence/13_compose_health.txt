@@ -1,0 +1,2 @@
+$ curl -s http://localhost:8000/health; echo
+{"status":"ok","model_version":"1.0.0"}

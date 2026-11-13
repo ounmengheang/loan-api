@@ -1,0 +1,5 @@
+$ docker compose ps --format 'table {{.Service}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}'
+SERVICE   IMAGE           STATUS                    PORTS
+adminer   adminer:4.8.1   Up 45 seconds             0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp
+api       loan-api-api    Up 40 seconds (healthy)   0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp
+db        postgres:17     Up 45 seconds (healthy)   5432/tcp
