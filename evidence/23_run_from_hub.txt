@@ -1,0 +1,28 @@
+$ docker run -d --name fromhub -p 8000:8000 ounmengheang/loan-api:1.0.0
+Unable to find image 'ounmengheang/loan-api:1.0.0' locally
+1.0.0: Pulling from ounmengheang/loan-api
+045bc75b48e9: Pulling fs layer
+37fb86c2a767: Pulling fs layer
+68bced9e0afa: Pulling fs layer
+2dc99d2d0a39: Pulling fs layer
+05e0eee5572e: Pulling fs layer
+9178e1754d57: Pulling fs layer
+ce6880a286ef: Pulling fs layer
+783ce558e5cf: Pulling fs layer
+9fc40e2bd146: Pulling fs layer
+8e36e79ddbf9: Pulling fs layer
+8e36e79ddbf9: Already exists
+68bced9e0afa: Already exists
+2dc99d2d0a39: Already exists
+783ce558e5cf: Already exists
+9fc40e2bd146: Already exists
+045bc75b48e9: Already exists
+37fb86c2a767: Already exists
+05e0eee5572e: Already exists
+9178e1754d57: Already exists
+ce6880a286ef: Already exists
+44136fa355b3: Already exists
+af47a5177b3e: Download complete
+Digest: sha256:404f5e28d2341469cbfb1ee221aba7b7ef0cf1a70c3c190d740a3caa87583c57
+Status: Downloaded newer image for ounmengheang/loan-api:1.0.0
+6f096256d0252cf0228151469cee20cfae65ab6406ac821be336ca117f6b666e

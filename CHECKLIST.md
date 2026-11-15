@@ -1,6 +1,6 @@
 # CHECKLIST: Loan API production image (Task 4.7)
 
-Author: Oun MengHeang · Docker Hub: https://hub.docker.com/r/<dockerhub-username>/loan-api
+Author: Oun MengHeang · Docker Hub: https://hub.docker.com/r/ounmengheang/loan-api
 
 Evidence collected in GitHub Codespaces with `bash scripts/collect_evidence.sh` (requirements 1-6) and `bash scripts/publish.sh <user>` (requirement 7). Each block shows the command and its output.
 
@@ -560,19 +560,288 @@ Action taken: the runtime stage of `Dockerfile.prod` runs `apt-get update && apt
 
 ## 7. Image published as `<user>/loan-api:1.0.0` and `:latest`
 
-Docker Hub repository: https://hub.docker.com/r/<dockerhub-username>/loan-api (tags `1.0.0` and `latest`). The local copies were deleted and `1.0.0` was pulled and run straight from Docker Hub; the prediction answers HTTP 200.
+Docker Hub repository: https://hub.docker.com/r/ounmengheang/loan-api (tags `1.0.0` and `latest`). The local copies were deleted and `1.0.0` was pulled and run straight from Docker Hub; the prediction answers HTTP 200.
 
-_(evidence 19 not collected yet)_
+```text
+$ docker build -q -t loan-api:prod -f Dockerfile.prod . && docker tag loan-api:prod ounmengheang/loan-api:1.0.0 && docker tag loan-api:prod ounmengheang/loan-api:latest && docker images ounmengheang/loan-api
+sha256:404f5e28d2341469cbfb1ee221aba7b7ef0cf1a70c3c190d740a3caa87583c57
+IMAGE                          ID             DISK USAGE   CONTENT SIZE   EXTRA
+ounmengheang/loan-api:1.0.0    404f5e28d234        778MB          178MB        
+ounmengheang/loan-api:latest   404f5e28d234        778MB          178MB
+```
 
-_(evidence 20 not collected yet)_
+```text
+$ docker push ounmengheang/loan-api:1.0.0
+The push refers to repository [docker.io/ounmengheang/loan-api]
+68bced9e0afa: Waiting
+af47a5177b3e: Waiting
+44136fa355b3: Waiting
+37fb86c2a767: Waiting
+68bced9e0afa: Waiting
+af47a5177b3e: Waiting
+44136fa355b3: Waiting
+37fb86c2a767: Waiting
+68bced9e0afa: Waiting
+af47a5177b3e: Waiting
+44136fa355b3: Waiting
+37fb86c2a767: Waiting
+44136fa355b3: Waiting
+37fb86c2a767: Waiting
+68bced9e0afa: Waiting
+af47a5177b3e: Waiting
+44136fa355b3: Waiting
+37fb86c2a767: Waiting
+68bced9e0afa: Waiting
+af47a5177b3e: Waiting
+37fb86c2a767: Waiting
+68bced9e0afa: Waiting
+af47a5177b3e: Waiting
+44136fa355b3: Waiting
+68bced9e0afa: Waiting
+af47a5177b3e: Waiting
+44136fa355b3: Waiting
+37fb86c2a767: Waiting
+af47a5177b3e: Waiting
+44136fa355b3: Waiting
+37fb86c2a767: Waiting
+68bced9e0afa: Waiting
+68bced9e0afa: Waiting
+af47a5177b3e: Waiting
+44136fa355b3: Waiting
+37fb86c2a767: Waiting
+68bced9e0afa: Waiting
+af47a5177b3e: Waiting
+44136fa355b3: Waiting
+37fb86c2a767: Waiting
+37fb86c2a767: Waiting
+68bced9e0afa: Waiting
+af47a5177b3e: Waiting
+44136fa355b3: Waiting
+68bced9e0afa: Waiting
+af47a5177b3e: Waiting
+44136fa355b3: Waiting
+37fb86c2a767: Waiting
+68bced9e0afa: Waiting
+af47a5177b3e: Waiting
+44136fa355b3: Waiting
+37fb86c2a767: Waiting
+af47a5177b3e: Waiting
+44136fa355b3: Waiting
+37fb86c2a767: Waiting
+68bced9e0afa: Waiting
+68bced9e0afa: Waiting
+af47a5177b3e: Waiting
+44136fa355b3: Waiting
+37fb86c2a767: Waiting
+68bced9e0afa: Waiting
+af47a5177b3e: Waiting
+44136fa355b3: Waiting
+37fb86c2a767: Waiting
+44136fa355b3: Waiting
+37fb86c2a767: Waiting
+68bced9e0afa: Waiting
+af47a5177b3e: Waiting
+37fb86c2a767: Waiting
+37fb86c2a767: Waiting
+37fb86c2a767: Waiting
+37fb86c2a767: Waiting
+37fb86c2a767: Waiting
+37fb86c2a767: Mounted from library/postgres
+2dc99d2d0a39: Waiting
+2dc99d2d0a39: Waiting
+44136fa355b3: Pushed
+05e0eee5572e: Waiting
+2dc99d2d0a39: Waiting
+af47a5177b3e: Pushed
+9178e1754d57: Waiting
+05e0eee5572e: Waiting
+2dc99d2d0a39: Waiting
+ce6880a286ef: Waiting
+9178e1754d57: Waiting
+05e0eee5572e: Waiting
+2dc99d2d0a39: Waiting
+ce6880a286ef: Waiting
+9178e1754d57: Waiting
+05e0eee5572e: Waiting
+ce6880a286ef: Waiting
+ce6880a286ef: Waiting
+9178e1754d57: Waiting
+05e0eee5572e: Waiting
+9178e1754d57: Waiting
+05e0eee5572e: Waiting
+ce6880a286ef: Waiting
+ce6880a286ef: Waiting
+9fc40e2bd146: Waiting
+68bced9e0afa: Pushed
+783ce558e5cf: Waiting
+05e0eee5572e: Pushed
+9fc40e2bd146: Waiting
+783ce558e5cf: Waiting
+ce6880a286ef: Pushed
+9fc40e2bd146: Waiting
+8e36e79ddbf9: Waiting
+783ce558e5cf: Waiting
+783ce558e5cf: Waiting
+9fc40e2bd146: Waiting
+8e36e79ddbf9: Waiting
+8e36e79ddbf9: Waiting
+783ce558e5cf: Waiting
+9fc40e2bd146: Waiting
+8e36e79ddbf9: Waiting
+783ce558e5cf: Waiting
+9fc40e2bd146: Waiting
+8e36e79ddbf9: Waiting
+8e36e79ddbf9: Waiting
+9178e1754d57: Pushed
+045bc75b48e9: Waiting
+045bc75b48e9: Waiting
+045bc75b48e9: Waiting
+045bc75b48e9: Waiting
+045bc75b48e9: Waiting
+783ce558e5cf: Pushed
+045bc75b48e9: Waiting
+8e36e79ddbf9: Pushed
+2dc99d2d0a39: Pushed
+045bc75b48e9: Pushed
+9fc40e2bd146: Pushed
+1.0.0: digest: sha256:404f5e28d2341469cbfb1ee221aba7b7ef0cf1a70c3c190d740a3caa87583c57 size: 856
+```
 
-_(evidence 21 not collected yet)_
+```text
+$ docker push ounmengheang/loan-api:latest
+The push refers to repository [docker.io/ounmengheang/loan-api]
+68bced9e0afa: Waiting
+44136fa355b3: Waiting
+af47a5177b3e: Waiting
+37fb86c2a767: Waiting
+68bced9e0afa: Waiting
+44136fa355b3: Waiting
+af47a5177b3e: Waiting
+37fb86c2a767: Waiting
+af47a5177b3e: Waiting
+37fb86c2a767: Waiting
+68bced9e0afa: Waiting
+44136fa355b3: Waiting
+44136fa355b3: Waiting
+af47a5177b3e: Waiting
+37fb86c2a767: Waiting
+68bced9e0afa: Waiting
+68bced9e0afa: Waiting
+44136fa355b3: Waiting
+af47a5177b3e: Waiting
+37fb86c2a767: Waiting
+37fb86c2a767: Waiting
+68bced9e0afa: Waiting
+44136fa355b3: Waiting
+af47a5177b3e: Waiting
+68bced9e0afa: Waiting
+44136fa355b3: Waiting
+af47a5177b3e: Waiting
+37fb86c2a767: Waiting
+68bced9e0afa: Waiting
+44136fa355b3: Waiting
+af47a5177b3e: Waiting
+37fb86c2a767: Waiting
+68bced9e0afa: Waiting
+44136fa355b3: Waiting
+af47a5177b3e: Waiting
+37fb86c2a767: Waiting
+68bced9e0afa: Waiting
+44136fa355b3: Waiting
+af47a5177b3e: Waiting
+37fb86c2a767: Waiting
+37fb86c2a767: Waiting
+68bced9e0afa: Waiting
+44136fa355b3: Waiting
+af47a5177b3e: Waiting
+68bced9e0afa: Waiting
+44136fa355b3: Waiting
+af47a5177b3e: Waiting
+37fb86c2a767: Waiting
+37fb86c2a767: Waiting
+2dc99d2d0a39: Waiting
+05e0eee5572e: Waiting
+68bced9e0afa: Waiting
+44136fa355b3: Already exists
+af47a5177b3e: Already exists
+37fb86c2a767: Waiting
+2dc99d2d0a39: Waiting
+05e0eee5572e: Waiting
+68bced9e0afa: Waiting
+68bced9e0afa: Waiting
+9178e1754d57: Waiting
+ce6880a286ef: Waiting
+37fb86c2a767: Layer already exists
+2dc99d2d0a39: Waiting
+05e0eee5572e: Waiting
+ce6880a286ef: Waiting
+2dc99d2d0a39: Waiting
+05e0eee5572e: Waiting
+68bced9e0afa: Waiting
+9178e1754d57: Waiting
+045bc75b48e9: Waiting
+ce6880a286ef: Layer already exists
+05e0eee5572e: Layer already exists
+9fc40e2bd146: Waiting
+8e36e79ddbf9: Waiting
+68bced9e0afa: Layer already exists
+9178e1754d57: Layer already exists
+783ce558e5cf: Waiting
+2dc99d2d0a39: Layer already exists
+783ce558e5cf: Waiting
+045bc75b48e9: Waiting
+9fc40e2bd146: Waiting
+8e36e79ddbf9: Waiting
+9fc40e2bd146: Layer already exists
+8e36e79ddbf9: Layer already exists
+783ce558e5cf: Layer already exists
+045bc75b48e9: Layer already exists
+latest: digest: sha256:404f5e28d2341469cbfb1ee221aba7b7ef0cf1a70c3c190d740a3caa87583c57 size: 856
+```
 
-_(evidence 22 not collected yet)_
+```text
+$ docker rmi ounmengheang/loan-api:1.0.0; docker images ounmengheang/loan-api
+Untagged: ounmengheang/loan-api:1.0.0
+Deleted: sha256:404f5e28d2341469cbfb1ee221aba7b7ef0cf1a70c3c190d740a3caa87583c57
+IMAGE   ID             DISK USAGE   CONTENT SIZE   EXTRA
+```
 
-_(evidence 23 not collected yet)_
+```text
+$ docker run -d --name fromhub -p 8000:8000 ounmengheang/loan-api:1.0.0
+Unable to find image 'ounmengheang/loan-api:1.0.0' locally
+1.0.0: Pulling from ounmengheang/loan-api
+045bc75b48e9: Pulling fs layer
+37fb86c2a767: Pulling fs layer
+68bced9e0afa: Pulling fs layer
+2dc99d2d0a39: Pulling fs layer
+05e0eee5572e: Pulling fs layer
+9178e1754d57: Pulling fs layer
+ce6880a286ef: Pulling fs layer
+783ce558e5cf: Pulling fs layer
+9fc40e2bd146: Pulling fs layer
+8e36e79ddbf9: Pulling fs layer
+8e36e79ddbf9: Already exists
+68bced9e0afa: Already exists
+2dc99d2d0a39: Already exists
+783ce558e5cf: Already exists
+9fc40e2bd146: Already exists
+045bc75b48e9: Already exists
+37fb86c2a767: Already exists
+05e0eee5572e: Already exists
+9178e1754d57: Already exists
+ce6880a286ef: Already exists
+44136fa355b3: Already exists
+af47a5177b3e: Download complete
+Digest: sha256:404f5e28d2341469cbfb1ee221aba7b7ef0cf1a70c3c190d740a3caa87583c57
+Status: Downloaded newer image for ounmengheang/loan-api:1.0.0
+6f096256d0252cf0228151469cee20cfae65ab6406ac821be336ca117f6b666e
+```
 
-_(evidence 24 not collected yet)_
+```text
+$ curl -s -w '\nHTTP %{http_code}\n' -X POST http://localhost:8000/api/v1/predictions -H 'Content-Type: application/json' -d '{"amount_usd":1500,"term_months":12,"monthly_income_usd":350,"previous_loans":1,"late_payments":0}'
+{"default_probability":0.095,"risk_band":"low","model_version":"1.0.0"}
+HTTP 200
+```
 
 
 ## Secrets

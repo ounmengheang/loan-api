@@ -1,0 +1,5 @@
+$ docker build -q -t loan-api:prod -f Dockerfile.prod . && docker tag loan-api:prod ounmengheang/loan-api:1.0.0 && docker tag loan-api:prod ounmengheang/loan-api:latest && docker images ounmengheang/loan-api
+sha256:404f5e28d2341469cbfb1ee221aba7b7ef0cf1a70c3c190d740a3caa87583c57
+IMAGE                          ID             DISK USAGE   CONTENT SIZE   EXTRA
+ounmengheang/loan-api:1.0.0    404f5e28d234        778MB          178MB        
+ounmengheang/loan-api:latest   404f5e28d234        778MB          178MB        
