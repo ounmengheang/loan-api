@@ -1,0 +1,3 @@
+$ python scripts/set_alias.py champion 1
+loan-default aliases before: {'challenger': '2', 'champion': '2'}
+loan-default aliases after:  {'challenger': '2', 'champion': '1'}

@@ -1,0 +1,21 @@
+$ python train_tracked.py 2>&1 | grep -vE 'Warning|warn|^ *$'
+2026/11/16 05:11:05 INFO mlflow.tracking.fluent: Experiment with name 'loan-default' does not exist. Creating a new experiment.
+🏃 View run logreg-C=0.1-class_weight=None at: http://127.0.0.1:5000/#/experiments/1/runs/38839e11517c45c38ede6b3f52df464b
+🧪 View experiment at: http://127.0.0.1:5000/#/experiments/1
+logreg {'C': 0.1, 'class_weight': None} auc=0.923 recall=0.707 precision=0.813
+🏃 View run logreg-C=0.1-class_weight=balanced at: http://127.0.0.1:5000/#/experiments/1/runs/c0fa4a428dff498f829d2e9a03db99f3
+🧪 View experiment at: http://127.0.0.1:5000/#/experiments/1
+logreg {'C': 0.1, 'class_weight': 'balanced'} auc=0.923 recall=0.865 precision=0.610
+🏃 View run logreg-C=1.0-class_weight=balanced at: http://127.0.0.1:5000/#/experiments/1/runs/41bf87016bd64a219cc2b3d851c376a8
+🧪 View experiment at: http://127.0.0.1:5000/#/experiments/1
+logreg {'C': 1.0, 'class_weight': 'balanced'} auc=0.923 recall=0.865 precision=0.611
+🏃 View run forest-max_depth=4-class_weight=None at: http://127.0.0.1:5000/#/experiments/1/runs/633a44fa2c254978ab6b2259b5e50b9d
+🧪 View experiment at: http://127.0.0.1:5000/#/experiments/1
+forest {'max_depth': 4, 'class_weight': None} auc=0.917 recall=0.608 precision=0.877
+🏃 View run forest-max_depth=8-class_weight=balanced at: http://127.0.0.1:5000/#/experiments/1/runs/f0cd722430ae429da7fa61c59cd690ee
+🧪 View experiment at: http://127.0.0.1:5000/#/experiments/1
+forest {'max_depth': 8, 'class_weight': 'balanced'} auc=0.925 recall=0.788 precision=0.738
+🏃 View run forest-max_depth=12-class_weight=balanced at: http://127.0.0.1:5000/#/experiments/1/runs/cd0b25183d354c81a469eec763c539f3
+🧪 View experiment at: http://127.0.0.1:5000/#/experiments/1
+forest {'max_depth': 12, 'class_weight': 'balanced'} auc=0.919 recall=0.761 precision=0.765
+6 runs tracked in experiment loan-default

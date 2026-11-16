@@ -1,0 +1,62 @@
+[
+  {
+    "run_name": "logreg-C=0.1-class_weight=None",
+    "run_id": "38839e11517c45c38ede6b3f52df464b",
+    "experiment_id": "1",
+    "model_uri": "models:/m-b788afb3fdb140cd867d2384017525d6",
+    "kind": "logreg",
+    "auc": 0.923,
+    "recall": 0.707,
+    "precision": 0.813
+  },
+  {
+    "run_name": "logreg-C=0.1-class_weight=balanced",
+    "run_id": "c0fa4a428dff498f829d2e9a03db99f3",
+    "experiment_id": "1",
+    "model_uri": "models:/m-4f8507dbc1d140e1bb6713f5d0ed699e",
+    "kind": "logreg",
+    "auc": 0.923,
+    "recall": 0.865,
+    "precision": 0.61
+  },
+  {
+    "run_name": "logreg-C=1.0-class_weight=balanced",
+    "run_id": "41bf87016bd64a219cc2b3d851c376a8",
+    "experiment_id": "1",
+    "model_uri": "models:/m-137359ef8a1144da9583c3b09011d2e8",
+    "kind": "logreg",
+    "auc": 0.923,
+    "recall": 0.865,
+    "precision": 0.611
+  },
+  {
+    "run_name": "forest-max_depth=4-class_weight=None",
+    "run_id": "633a44fa2c254978ab6b2259b5e50b9d",
+    "experiment_id": "1",
+    "model_uri": "models:/m-d01cfb5b635140dbb78c67aeab9ea6c3",
+    "kind": "forest",
+    "auc": 0.917,
+    "recall": 0.608,
+    "precision": 0.877
+  },
+  {
+    "run_name": "forest-max_depth=8-class_weight=balanced",
+    "run_id": "f0cd722430ae429da7fa61c59cd690ee",
+    "experiment_id": "1",
+    "model_uri": "models:/m-d6f44a70f4cd498980e54e86bdccc09d",
+    "kind": "forest",
+    "auc": 0.925,
+    "recall": 0.788,
+    "precision": 0.738
+  },
+  {
+    "run_name": "forest-max_depth=12-class_weight=balanced",
+    "run_id": "cd0b25183d354c81a469eec763c539f3",
+    "experiment_id": "1",
+    "model_uri": "models:/m-4a58b95ef08e42bb999d2de2a29fa552",
+    "kind": "forest",
+    "auc": 0.919,
+    "recall": 0.761,
+    "precision": 0.765
+  }
+]

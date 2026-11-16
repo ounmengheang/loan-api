@@ -1,0 +1,2 @@
+$ curl -s http://127.0.0.1:5001/invocations -H 'Content-Type: application/json' -d '{"dataframe_records": [{"amount_usd": 1500, "term_months": 12, "monthly_income_usd": 350.0, "previous_loans": 1, "late_payments": 0}, {"amount_usd": 4800, "term_months": 6, "monthly_income_usd": 250.0, "previous_loans": 0, "late_payments": 3}]}'; echo
+{"predictions": [[0.9054017784694199, 0.09459822153058012], [0.002339021227680149, 0.9976609787723199]]}

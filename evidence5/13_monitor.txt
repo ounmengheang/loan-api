@@ -1,0 +1,18 @@
+$ python monitor.py
+2026/11/16 05:12:17 INFO mlflow.tracking.fluent: Experiment with name 'loan-default-monitoring' does not exist. Creating a new experiment.
+day  1: income PSI=0.034 mean risk=0.363
+day  2: income PSI=0.053 mean risk=0.346
+day  3: income PSI=0.066 mean risk=0.353
+day  4: income PSI=0.069 mean risk=0.365
+day  5: income PSI=0.073 mean risk=0.375
+day  6: income PSI=0.172 mean risk=0.380
+day  7: income PSI=0.132 mean risk=0.391
+day  8: income PSI=0.236 mean risk=0.387
+day  9: income PSI=0.240 mean risk=0.420
+day 10: income PSI=0.326 mean risk=0.438
+day 11: income PSI=0.236 mean risk=0.377
+day 12: income PSI=0.355 mean risk=0.446
+day 13: income PSI=0.513 mean risk=0.413
+day 14: income PSI=0.621 mean risk=0.414
+🏃 View run daily-drift-check at: http://127.0.0.1:5000/#/experiments/2/runs/44cad9cdc9b047cfacf6dfa28b6d6c5b
+🧪 View experiment at: http://127.0.0.1:5000/#/experiments/2

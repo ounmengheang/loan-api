@@ -1,0 +1,2 @@
+$ curl -s -X POST http://127.0.0.1:8000/api/v1/predictions -H 'Content-Type: application/json' -d '{"amount_usd": 1500, "term_months": 12, "monthly_income_usd": 350.0, "previous_loans": 1, "late_payments": 0}'; echo
+{"default_probability":0.095,"risk_band":"low","model_version":"1"}

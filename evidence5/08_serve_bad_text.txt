@@ -1,0 +1,2 @@
+$ curl -s http://127.0.0.1:5001/invocations -H 'Content-Type: application/json' -d '{"dataframe_records": [{"amount_usd": "fifteen hundred", "term_months": 12, "monthly_income_usd": 350.0, "previous_loans": 1, "late_payments": 0}]}'; echo
+{"error_code": "BAD_REQUEST", "message": "Invalid input. Data is not compatible with model signature. Failed to convert column amount_usd to type 'int64'. Error: 'ValueError(\"invalid literal for int() with base 10: 'fifteen hundred'\")'", "sqlstate": "KAM00", "error_class": "INVALID_PARAMETER_VALUE"}

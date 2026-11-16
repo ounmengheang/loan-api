@@ -1,0 +1,10 @@
+$ python scripts/runs_table.py
+run                                             auc  recall precision  run link
+forest-max_depth=8-class_weight=balanced      0.925   0.788     0.738  http://127.0.0.1:5000/#/experiments/1/runs/f0cd722430ae429da7fa61c59cd690ee
+logreg-C=1.0-class_weight=balanced            0.923   0.865     0.611  http://127.0.0.1:5000/#/experiments/1/runs/41bf87016bd64a219cc2b3d851c376a8
+logreg-C=0.1-class_weight=balanced            0.923   0.865     0.610  http://127.0.0.1:5000/#/experiments/1/runs/c0fa4a428dff498f829d2e9a03db99f3
+logreg-C=0.1-class_weight=None                0.923   0.707     0.813  http://127.0.0.1:5000/#/experiments/1/runs/38839e11517c45c38ede6b3f52df464b
+forest-max_depth=12-class_weight=balanced     0.919   0.761     0.765  http://127.0.0.1:5000/#/experiments/1/runs/cd0b25183d354c81a469eec763c539f3
+forest-max_depth=4-class_weight=None          0.917   0.608     0.877  http://127.0.0.1:5000/#/experiments/1/runs/633a44fa2c254978ab6b2259b5e50b9d
+6 runs, model types: ['forest', 'logreg']
+chart saved to evidence5/runs_comparison.png

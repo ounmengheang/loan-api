@@ -1,0 +1,12 @@
+$ python register.py
+Successfully registered model 'loan-default'.
+2026/11/16 05:11:50 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: loan-default, version 1
+Created version '1' of model 'loan-default'.
+Registered model 'loan-default' already exists. Creating a new version of this model...
+2026/11/16 05:11:51 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: loan-default, version 2
+Created version '2' of model 'loan-default'.
+champion   -> loan-default version 1: logreg-C=0.1-class_weight=balanced (auc=0.923, recall=0.865, precision=0.61)
+challenger -> loan-default version 2: forest-max_depth=8-class_weight=balanced (auc=0.925, recall=0.788, precision=0.738)
+aliases: {'challenger': '2', 'champion': '1'}
+version 2: run f0cd7224..., description: forest-max_depth=8-class_weight=balanced: AUC 0.925, recall 0.788, precision 0.738. Challenger: highest AUC of the other runs (best overall ranking).
+version 1: run c0fa4a42..., description: logreg-C=0.1-class_weight=balanced: AUC 0.923, recall 0.865, precision 0.61. Champion: highest recall with precision >= 0.60 (catches the most defaulters).

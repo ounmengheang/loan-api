@@ -1,0 +1,2 @@
+$ python load_alias.py
+loan-default version 1 (champion): [0.095 0.998]

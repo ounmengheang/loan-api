@@ -1,0 +1,4 @@
+$ python scripts/compare.py
+MLflow scoring server (port 5001): P(default) = 0.094598 -> rounded 0.095
+FastAPI (port 8000): default_probability = 0.095, model_version = 1
+same probability: True
