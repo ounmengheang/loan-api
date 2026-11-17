@@ -39,3 +39,15 @@ def test_create_and_read_application(client):
 
 def test_missing_application_is_404(client):
     assert client.get("/api/v1/applications/99999").status_code == 404
+
+
+RISKY = {"amount_usd": 4800, "term_months": 6, "monthly_income_usd": 250.0, "previous_loans": 0, "late_payments": 3}
+
+
+def test_known_applicants_get_the_right_risk(client):
+    """Guards the formula: a safe applicant must score low and a risky one high (the bad release drill)."""
+    safe = client.post("/api/v1/predictions", json=GOOD).json()
+    risky = client.post("/api/v1/predictions", json=RISKY).json()
+    assert safe["default_probability"] < 0.2 and safe["risk_band"] == "low"
+    assert risky["default_probability"] > 0.8 and risky["risk_band"] == "high"
+    assert risky["default_probability"] > safe["default_probability"]
