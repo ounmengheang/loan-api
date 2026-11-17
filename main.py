@@ -1,7 +1,9 @@
 """Loan Application Service: stores loan applications and scores their default risk."""
 from contextlib import asynccontextmanager
 import hmac
+import logging
 import os
+import time
 
 import joblib
 import pandas as pd
@@ -17,6 +19,7 @@ MODEL_NAME = os.getenv("MODEL_NAME", "loan-default")
 MODEL_ALIAS = os.getenv("MODEL_ALIAS", "champion")
 GIT_SHA = os.getenv("GIT_SHA", "dev")  # set at build time by the pipeline
 API_KEY = os.getenv("API_KEY")  # unset locally and in CI: no key needed
+log = logging.getLogger("uvicorn.error")  # shows up in the server log next to the access lines
 FEATURES = ["amount_usd", "term_months", "monthly_income_usd", "previous_loans", "late_payments"]
 
 
@@ -44,7 +47,7 @@ async def lifespan(app: FastAPI):
     ml.clear()
 
 
-app = FastAPI(title="Loan Application Service", version="1.0.0", lifespan=lifespan)
+app = FastAPI(title="Loan Application Service: Battambang Branch", version="1.0.0", lifespan=lifespan)
 
 
 @app.middleware("http")
@@ -57,9 +60,13 @@ async def require_api_key(request: Request, call_next):
 
 
 def score(features: LoanFeatures) -> Prediction:
+    started = time.perf_counter()
     X = pd.DataFrame([features.model_dump()])[ml["features"]]
     probability = float(ml["predict_proba"](X)[0, 1])
     band = "low" if probability < 0.2 else "medium" if probability < 0.5 else "high"
+    # One line per decision (no personal data): lets us watch the risk mix and latency in Render's logs
+    log.info("scored: probability=%.3f band=%s model=%s sha=%s latency_ms=%.1f",
+             probability, band, ml["version"], GIT_SHA[:7], (time.perf_counter() - started) * 1000)
     return Prediction(default_probability=round(probability, 3), risk_band=band, model_version=ml["version"])
 
 
