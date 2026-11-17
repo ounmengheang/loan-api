@@ -7,3 +7,5 @@ models/
 mlflow.db
 mlartifacts/
 logs/
+.env
+*.env
