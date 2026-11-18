@@ -67,7 +67,7 @@ def score(features: LoanFeatures) -> Prediction:
     # One line per decision (no personal data): lets us watch the risk mix and latency in Render's logs
     log.info("scored: probability=%.3f band=%s model=%s sha=%s latency_ms=%.1f",
              probability, band, ml["version"], GIT_SHA[:7], (time.perf_counter() - started) * 1000)
-    return Prediction(default_probability=round(1 - probability, 3), risk_band=band, model_version=ml["version"])
+    return Prediction(default_probability=round(probability, 3), risk_band=band, model_version=ml["version"])
 
 
 @app.get("/health")
